@@ -1,9 +1,54 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.views.generic import (
+    CreateView, ListView, DetailView, UpdateView, DeleteView)
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, PostGamesForm, GamesForm
+from .forms import PostForm
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.utils.text import slugify
+from django.utils import timezone
+from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import (
+    LoginRequiredMixin,
+    UserPassesTestMixin
+    )
+
+
+class Text:
+    #  https://lookaway.info/zine/information/prepopulate-a-form-field-using-slugs-and-integers-django-20210410/
+
+    def slugify_unique(model, title):
+        '''
+        Given a DB model and a title, return a unique slug that is unique \
+        to all other slug fields of the given DB model.
+
+        Arguments
+        model - Must be a Django database model that has \
+                   a slug field called "slug".
+        title - The string used to create the slug.
+
+        Returns - A slug that is unique across all instances of the model.
+        '''
+        from django.utils.text import slugify
+        slug = slugify(title)
+        existing_slugs = []
+        try:
+            [existing_slugs.append(str(i.slug)) for i in model.objects.all()]
+        except IndexError:
+            print("There was no slug field found for {}".format(model))
+            return slug
+        if slug in existing_slugs:
+            date_slug = slug + "-" + timezone.now().strftime("%Y%m%d")
+            if date_slug in existing_slugs:
+                long_slug = date_slug + timezone.now().strftime("%m%s")
+                return long_slug
+            else:
+                return date_slug
+        else:
+            return slug
 
 
 class PostList(generic.ListView):
@@ -67,6 +112,13 @@ class PostDetail(View):
         )
 
 
+@login_required
+def delete_post(request, post_id=None):
+    post_to_delete = Post.objects.get(id=post_id)
+    post_to_delete.delete()
+    return HttpResponseRedirect(reverse('home'))
+
+
 class PostLike(View):
 
     def post(self, request, slug, *args, **kwargs):
@@ -78,3 +130,96 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+
+@login_required
+def post_games_view(request):
+    if request.method == 'POST':
+        form = PostGamesForm(request.POST)
+        if form.is_valid():
+            return render(request, 'index.html')
+    else:
+        form = PostGamesForm()
+    return render(request, 'PostGamesForm.html', {'form': form})
+
+
+@login_required
+def post_games(request):
+    if request.method == 'POST':
+        form = PostGamesForm(request.POST)
+        if form.is_valid():
+            return render(request, 'index.html')
+    else:
+        form = PostGamesForm()
+    return render(request, 'post_games.html', {'form': form})
+
+
+@login_required
+def addGames(request):
+
+    form = GamesForm(request.POST or None, request.FILES or None)
+
+    if request.method == 'POST':
+        form = GamesForm(request.POST, request.FILES)
+        if form.is_valid():
+
+            games = form.save(commit=False)
+            games.author = request.user
+            games.save()
+            messages.success(request, 'Your Game was created successfully')
+            return HttpResponseRedirect(reverse('home'))
+
+    else:
+        form = GamesForm()
+    return render(request, 'PostGamesForm.html', {'form': form})
+
+
+class PostCreateView(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = [
+        'title', 'excerpt', 'featured_image', 'content',
+        'status']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        form.instance.slug = Text.slugify_unique(self.model, form.instance.title)  # noqa
+        return super().form_valid(form)
+
+
+class PostUpdateView(
+    LoginRequiredMixin,
+    UserPassesTestMixin,
+    SuccessMessageMixin,
+    UpdateView
+        ):
+    model = Post
+    fields = [
+        'title', 'excerpt', 'featured_image', 'content',
+        'status']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        post = self.get_object()
+        form.instance.slug = Text.slugify_unique(self.model, form.instance.title)  # noqa
+
+        return super().form_valid(form)
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+
+    def get_success_message(self, cleaned_data):
+        return "%(slug)s updated successfully" % {'slug': self.object.slug}
+
+
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Post
+    success_url = '/'
+
+    def test_func(self):
+        post = self.get_object()
+
+        if self.request.user == post.author:
+            return True
+        return False

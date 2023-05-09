@@ -1,7 +1,7 @@
 .navbar-brand {
     font-size: 1.4rem;
     font-weight: 700;
-    background-color: orange;
+    background-color: red;
 }
 
 .card {
@@ -18,7 +18,7 @@
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #23BBBB;
+    background-color: red;
 }
 
 .author {
