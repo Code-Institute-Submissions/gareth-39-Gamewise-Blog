@@ -1,6 +1,7 @@
 .navbar-brand {
     font-size: 1.4rem;
     font-weight: 700;
+    background-color: orange;
 }
 
 .card {
