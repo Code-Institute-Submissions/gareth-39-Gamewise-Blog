@@ -145,25 +145,25 @@ def post_games_view(request):
 @login_required
 def post_games(request):
     if request.method == 'POST':
-        form = PostGamesForm(request.POST)
+        form = PostVehicleForm(request.POST)
         if form.is_valid():
             return render(request, 'index.html')
     else:
-        form = PostGamesForm()
+        form = PostVehicleForm()
     return render(request, 'post_games.html', {'form': form})
 
 
 @login_required
 def addGames(request):
 
-    form = GamesForm(request.POST or None, request.FILES or None)
+    form = VehicleForm(request.POST or None, request.FILES or None)
 
     if request.method == 'POST':
         form = GamesForm(request.POST, request.FILES)
         if form.is_valid():
 
             games = form.save(commit=False)
-            games.author = request.user
+            vehicle.author = request.user
             games.save()
             messages.success(request, 'Your Game was created successfully')
             return HttpResponseRedirect(reverse('home'))

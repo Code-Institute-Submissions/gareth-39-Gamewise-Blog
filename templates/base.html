@@ -38,6 +38,21 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{% url 'home' %}" role="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">
+                          Cars
+                        </a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="{% url 'home' %}">List</a>
+                          <a class="dropdown-item" href="{% url 'post-create' %}">Create</a>
+                        </div>
+                      </li>
+                      {% if user.is_superuser %}
+                      <li class="nav-item">
+                        <a class="nav-link" aria-label="admin" href="{% url 'admin:index' %}"><i class="fa fa-unlock"></i>Admin</a>
+                      </li>
+                      {% endif %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
@@ -78,49 +93,51 @@
     </main>
 
     <!-- Footer -->
-    <footer class="container p-10 pb-0">
-        <p class="m-0 text-center text-white">Made by Gareth Henvey
-            in assocation with Code Institite
-        </p>
-        <div class="bg-dark text-center text-red">
-            <!-- Grid container -->
-            <div class="container p-4 pb-0">
-              <!-- Section: Social media -->
-              <section class="mb-4">
-                <!-- Facebook -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/" role="button"
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-          
-                <!-- Twitter -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/" role="button"
-                  ><i class="fab fa-twitter"></i
-                ></a>
-          
-                <!-- Google -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button"
-                  ><i class="fab fa-google"></i
-                ></a>
-          
-                <!-- Instagram -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/" role="button"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-          
-                <!-- Linkedin -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/" role="button"
-                  ><i class="fab fa-linkedin-in"></i
-                ></a>
-          
-                <!-- Github -->
-                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/" role="button"
-                  ><i class="fab fa-github"></i
-                ></a>
-              </section>
-              <!-- Section: Social media -->
-            </div>
+    <footer class="bg-dark text-center text-white fixed-bottom">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+      
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-twitter"></i
+            ></a>
+      
+            <!-- Google -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-google"></i
+            ></a>
+      
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-instagram"></i
+            ></a>
+      
+            <!-- Linkedin -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+      
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fab fa-github"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
         </div>
-          </footer>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            Made by Gareth Henvey
+        </div>
+        
+      </footer>
         <script>
             setTimeout(function () {
                 let messages = document.getElementById('msg');

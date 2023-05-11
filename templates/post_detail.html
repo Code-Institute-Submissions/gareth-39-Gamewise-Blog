@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 {% load crispy_forms_tags %}
 
 <div class="masthead">
@@ -13,9 +15,11 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width="100%">
+                <img class="img-fluid mx-auto"
+                    src="https://images.pexels.com/photos/12191128/pexels-photo-12191128.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="placeholder" width="50%">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
+                <img src=" {{ post.featured_image.url }}" class="img-fluid mx-auto" alt="post image">
                 {% endif %}
             </div>
         </div>
@@ -31,24 +35,42 @@
                 <p class="card-text ">
                     {{ post.content | safe }}
                 </p>
+                <span>
+                    
+                    {% if user.is_authenticated %}
+                    {% if user ==  post.author %}
+                    <h3>Edit Post as: {{ user.username }}</h3>
+                    <p>Author is: {{ post.author }}</p>
+                    <a href="{% url 'post_update' post.slug %}">
+                        <button type="submit" class="btn btn-success btn-lg">Edit</button>
+                    </a>
+                    <h3>Delete Post as: {{ user.username }}:</h3>
+                    <a href="{% url 'post_delete' post.slug %}">
+                        <button type="submit" class="btn btn-danger btn-lg">Delete</button>
+                    </a>
+                    {% endif %}
+                    {% endif %}
+                </span>
+                <br>
                 <div class="row">
-
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="fas fa-heart"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
+                                        class="far fa-heart"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
-                        <!-- The number of likes goes before the closing strong tag -->
-                        <span class="text-secondary">{{ post.number_of_likes }} </span>
+                            <!-- The number of likes goes before the closing strong tag -->
+                            <span class="text-secondary">{{ post.number_of_likes }} </span>
                         </strong>
                     </div>
                     <div class="col-1">
