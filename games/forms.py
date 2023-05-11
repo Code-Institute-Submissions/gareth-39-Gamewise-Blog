@@ -26,7 +26,7 @@ class PostForm(forms.ModelForm):
             super(PostGames, self).__init__(*args, **kwargs)
 
 
-class GamesForm(forms.ModelForm):
+class GameForm(forms.ModelForm):
     required_css_class = 'required-field'
     error_css_class = 'error-field'
 
@@ -47,7 +47,7 @@ class GamesForm(forms.ModelForm):
             super(PostGames, self).__init__(*args, **kwargs)
 
 
-class PostGamesForm(forms.Form):
+class PostGameForm(forms.Form):
     name = forms.CharField(max_length=100)
     email = forms.EmailField()
     message = forms.CharField(widget=forms.Textarea)

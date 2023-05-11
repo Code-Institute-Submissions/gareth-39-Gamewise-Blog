@@ -4,7 +4,7 @@ from django.views.generic import (
     CreateView, ListView, DetailView, UpdateView, DeleteView)
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm, PostGamesForm, GamesForm
+from .forms import CommentForm, PostGameForm, GameForm
 from .forms import PostForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -132,38 +132,38 @@ class PostLike(View):
 
 
 @login_required
-def post_games_view(request):
+def post_game_view(request):
     if request.method == 'POST':
-        form = PostGamesForm(request.POST)
+        form = PostGameForm(request.POST)
         if form.is_valid():
             return render(request, 'index.html')
     else:
-        form = PostGamesForm()
+        form = PostGameForm()
     return render(request, 'PostGamesForm.html', {'form': form})
 
 
 @login_required
-def post_games(request):
+def post_game(request):
     if request.method == 'POST':
-        form = PostVehicleForm(request.POST)
+        form = PostGameForm(request.POST)
         if form.is_valid():
             return render(request, 'index.html')
     else:
-        form = PostVehicleForm()
-    return render(request, 'post_games.html', {'form': form})
+        form = PostGameForm()
+    return render(request, 'post_game.html', {'form': form})
 
 
 @login_required
-def addGames(request):
+def addGame(request):
 
-    form = VehicleForm(request.POST or None, request.FILES or None)
+    form = GmaeForm(request.POST or None, request.FILES or None)
 
     if request.method == 'POST':
-        form = GamesForm(request.POST, request.FILES)
+        form = GameForm(request.POST, request.FILES)
         if form.is_valid():
 
             games = form.save(commit=False)
-            vehicle.author = request.user
+            game.author = request.user
             games.save()
             messages.success(request, 'Your Game was created successfully')
             return HttpResponseRedirect(reverse('home'))
