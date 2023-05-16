@@ -3,7 +3,7 @@
 * Here is a live link to my blog https://gamewise-blog.herokuapp.com/
 
 * Here is a link to the github repository https://github.com/gareth-39/Gamewise-Blog
-
+<br><br>
 ![Alt text](assets/tests/i%20am%20responsive.png)
 
 #
@@ -147,29 +147,29 @@ I used black writing with red boxes for easy viewing.
 
 #
 # Wireframes:
-- i used https://balsamiq.com/wireframes/ to design my wireframes.
-![Alt text](assets/wireframes/admin%20wireframe.png)<br>
-![Alt text](assets/wireframes/edit%20and%20delete.png)<br>
-![Alt text](assets/wireframes/homepage.png)<br>
-![Alt text](assets/wireframes/mobile%20wireframe.png)<br>
+- i used https://balsamiq.com/wireframes/ to design my wireframes.<br><br>
+![Alt text](assets/wireframes/admin%20wireframe.png)
+![Alt text](assets/wireframes/edit%20and%20delete.png)
+![Alt text](assets/wireframes/homepage.png)
+![Alt text](assets/wireframes/mobile%20wireframe.png)
 ![Alt text](assets/wireframes/wireframe%20homepage.png)
 
 #
 
 # User stories:
-- This is my user story screenshot
-![Alt text](assets/screenshots/full%20view%20done.png)<br<br>>
+- This is my user story screenshot<br><br>
+![Alt text](assets/screenshots/full%20view%20done.png)<br><br>
 
-- This is my open issues screenshot
+- This is my open issues screenshot<br><br>
 ![Alt text](assets/screenshots/open%20stories.png)<br><br>
 
-- This is my closed issues screenshot
+- This is my closed issues screenshot<br><br>
 ![Alt text](assets/screenshots/closedstories.png)
 
 #
 
 # Future features:
-* In the future i would like to add social sign in <br> and a forgot my password rest link.
+* In the future i would like to add social sign in <br> and a forgot my password rest link.<br><br>
 ![Alt text](assets/screenshots/Future%20features.png)
 
 * Here is a link to my issues page on github https://github.com/gareth-39/Gamewise-Blog/issues
