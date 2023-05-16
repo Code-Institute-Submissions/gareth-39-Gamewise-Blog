@@ -48,7 +48,7 @@
 
 
 # Purpose:
-The purpose of the Gamewise-blog was to demonstrate the new skills<br> I have learned in this part of the full stack development course. To show I could create a django<br> blog that was fully functional and was also interactive from an admin point of view and a user point of view.
+The purpose of the Gamewise-blog was to demonstrate the new skills<br> I have learned in this part of the full stack development course. To show I could create a django<br> blog that was fully functional and also interactive from an admin point of view and a user point of view.
 
 #
 
@@ -58,13 +58,13 @@ My blog is a gaming and mental health blog were people can come that about <br> 
 #
 
 # Features of my blog
-- This is a selection of screenshots to show all the different functioning<br> pages of my blog.
-![Alt text](assets/screenshots/admin%20logged%20in.png)
-![Alt text](assets/screenshots/logged%20in.png)
-![Alt text](assets/screenshots/not%20logged%20in.png)
-![Alt text](assets/screenshots/sign%20in.png)
-![Alt text](assets/screenshots/sign%20out%20message.png)
-![Alt text](assets/screenshots/sign%20up.png)
+- This is a selection of screenshots to show all the different functioning<br> pages of my blog
+<br><br>
+![Alt text](assets/screenshots/new%20admin.png)
+![Alt text](assets/screenshots/new%20create.png)
+![Alt text](assets/screenshots/new%20homepage.png)
+![Alt text](assets/screenshots/new%20login.png)
+![Alt text](assets/screenshots/new%20register.png)
 ![Alt text](assets/screenshots/edit%20delete.png)
 
 
