@@ -48,17 +48,17 @@
 
 
 # Purpose:
-The purpose of the Gamewise-blog was to demonstrate the new skills<br> I have learned in this part of the full stack development course. To show I could create a django<br> blog that was fully functional and also interactive from an admin point of view and a user point of view.
+The intension of my Gamewise-blog was to demonstrate the skills I have acquired during this phase of the full stack development course. The blog was developed to illustrate my proficiency in building a fully functional Django blog with interactive features, catering for both the administrative and user perspectives.
 
 #
 
 # My blog:
-My blog is a gaming and mental health blog were people can come that about <br> everything to do with the gaming world and whats going on in thier head to break<br> down barriers and let people know its always good to talk no matter whats going on in thier life.
+The creation of my Gamewise-blog was propelled by the intention of facilitating the collaborative convergence of mental health and gaming. This aimed to establish a protected and all-inclusive environment where cohorts could meet and communicate freely concerning their personal experiences with mental health.  Through the integration of these two distinct domains, the blog sought to create a platform which encourages open dialogue, fosters a sense of safety, and demonstrates that a sense of comfort can be found in the most unlikely places. 
 
 #
 
 # Features of my blog
-- This is a selection of screenshots to show all the different functioning<br> pages of my blog
+- Here is a selection of screenshots which illustrates<br> the diverse mechanisms imbedded within my blog.
 <br><br>
 ![Alt text](assets/screenshots/new%20admin.png)
 ![Alt text](assets/screenshots/new%20create.png)
@@ -71,7 +71,7 @@ My blog is a gaming and mental health blog were people can come that about <br> 
 #
 
 # UX/UI
-The quiz was created to show my programming knowledge Django, Html, User stories,<br> Issues Agile development, Python testing and Api's.
+The blog was created to show my programming knowledge of Django, Html, User stories,<br> Issues Agile development, Python testing and Api's.
 
 #
 
@@ -83,16 +83,15 @@ The quiz was created to show my programming knowledge Django, Html, User stories
 #
 
 # Expectations 
-- Every part of my quiz worked as it was meant to.
-- Each  button worked functionally when it was pressed and brought the user to the correct page.
-- For it to be responsive regardless of what device the user chose to be on.
-- All functions worked as they should in a clear and concise manner.
+- Every part of my blog is functional as intended.
+- Each  button is functional and corresponded accordingly when pressed.
+- Responsive on all devices irrespective of users choice.
+- All functions worked as they should and in a clear and concise manner.
 
 #
 
 # Design:
-My design idea was to keep it simple and easy on the eye<br>every part is readible and clear. SImple way as a user to create, edit and delete your<br> own pages as you please. to also like and comment on others posts easliy.<br>
-I used black writing with red boxes for easy viewing.
+My intension was to formulate a blog which encompassed simplicity and visual comfort. Each component was carefully constructed to foster readability and clarity. The user interface provided a straightforward concept for creating, editing, and adapting changes effortlessly. Furthermore, it was designed so users could easily read, like and communicate with other users’ posts. I optimised visual perception through the use of black text accompanied by red boxes, which enhances the viewing experience. 
 
 #
 
@@ -169,7 +168,7 @@ I used black writing with red boxes for easy viewing.
 #
 
 # Future features:
-* In the future i would like to add social sign in <br> and a forgot my password rest link.<br><br>
+* In the future i would like to add "social sign-in <br> and a "forgot my password reset link".<br><br>
 ![Alt text](assets/screenshots/Future%20features.png)
 
 * Here is a link to my issues page on github https://github.com/gareth-39/Gamewise-Blog/issues
@@ -177,7 +176,7 @@ I used black writing with red boxes for easy viewing.
 #
 
 # Bugs and errors:
-I had so many bugs and errors on this project here is a list of all of them and there fixes.
+I had so many bugs and errors on this project, here is a list of them and the solutions i encorperated.
 
 - Error 404 page not found = (Solution) It was I had not linked my paths properly in my settings.py
 
@@ -254,7 +253,7 @@ without them i would have given up.
 
 # My thanks:
 
-* Thanks to my mentor Jubril Akolade for his endless patience with me and answering my plethora of questions.
+* Thanks to my mentor Jubril Akolade for his endless patience and answering my plethora of questions.
 
 * Thanks to Google (https://www.google.com/) for helping me debug and troubleshoot any issue I had.
 
