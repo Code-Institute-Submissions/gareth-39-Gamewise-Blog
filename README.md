@@ -183,11 +183,17 @@ I had so many bugs and errors on this project here is a list of all of them and 
 
 - CSS not working on Heroku = (Solution) I had not changed debug to false before deployment
 
-- Server 500 = (Solution) there was a problem in my json file with the superuser deleted that user and replaced it with a new one/
+- Server 500 = (Solution) there was a problem in my json file with the superuser deleted that user and replaced it with a new one.
 
 - html pages not found = (Solution) This was a big one as it made my whole code error i changed a file name from blog to games, i didnt realise every where on the code i needed to change blog to games in each py file.
 
 - Images not loading = (Solution) Realised it was the I was using it didnt seem to be compatible with gitpod so all the images errored changed the site and they worked perfectly.
+
+- Build fail on heroku = (Solution) When I deployed through heroku the build failed not sure why just disconnected the app and re-deployed and it worked.
+
+- Indentation errors = (Solution) Simple spelling mistakes that were easily fixed.
+
+- Fields.E305 error = (Solution) Screenshot provided ![Alt text](assets/screenshots/error%20image.jpg) This one took a lot to figure out I realised the name on the related path was to similar. So i replaced the names with a universal + sign and it fixed the error.
 
 
 #
@@ -251,5 +257,8 @@ without them i would have given up.
 * Thanks to my mentor Jubril Akolade for his endless patience with me and answering my plethora of questions.
 
 * Thanks to Google (https://www.google.com/) for helping me debug and troubleshoot any issue I had.
+
+* Thanks to Code Institute https://codeinstitute.net/ie/ once again for creating the template for this blog.
+
 
 * Finally, thanks to my Slack group (https://app.slack.com/) who are so helpful and assisting me every step of the way.
