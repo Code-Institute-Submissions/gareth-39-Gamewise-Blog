@@ -1,4 +1,4 @@
-# Welcome to my Gamewise Blog Project Portfolio 4. Created using the django blog provided by CODE INSITUTE.
+# Welcome to my Gamewise Blog Project Portfolio 4. Created using the django blog provided by CODE INSTITUTE.
 
 * Here is a live link to my blog https://gamewise-blog.herokuapp.com/
 
