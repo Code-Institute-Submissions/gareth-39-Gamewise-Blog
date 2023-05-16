@@ -1,6 +1,6 @@
 # Welcome to my Gamewise Blog Project Portfolio 4. Created using the django blog provided by CODE INSITUTE.
 
-* Here is a live link to my blog https://gamewise-blog.herokuapp.com/
+* Here is a live link to my blog 
 
 * Here is a link to the github repository https://github.com/gareth-39/Gamewise-Blog
 
@@ -24,8 +24,10 @@
 * CSS results (CI python linter)
 * HTML results (w3c validator)
 * Am i responsive
-* Bugs and errors
+* Wireframes
 * User stories
+* Future features
+* Bugs and errors
 * Deployment
 * Credits
 * Icons
@@ -55,6 +57,19 @@ My blog is a gaming and mental health blog were people can come that about <br> 
 
 #
 
+# Features of my blog
+- This is a selection of screenshots to show all the different functioning<br> pages of my blog.
+![Alt text](assets/screenshots/admin%20logged%20in.png)
+![Alt text](assets/screenshots/logged%20in.png)
+![Alt text](assets/screenshots/not%20logged%20in.png)
+![Alt text](assets/screenshots/sign%20in.png)
+![Alt text](assets/screenshots/sign%20out%20message.png)
+![Alt text](assets/screenshots/sign%20up.png)
+![Alt text](assets/screenshots/edit%20delete.png)
+
+
+#
+
 # UX/UI
 The quiz was created to show my programming knowledge Django, Html, User stories,<br> Issues Agile development, Python testing and Api's.
 
@@ -76,7 +91,8 @@ The quiz was created to show my programming knowledge Django, Html, User stories
 #
 
 # Design:
-My design idea was to keep it simple and easy on the eye<br>every part is readible and clear. SImple way as a user to create, edit and delete your<br> own pages as you please. to also like and comment on others posts easliy.
+My design idea was to keep it simple and easy on the eye<br>every part is readible and clear. SImple way as a user to create, edit and delete your<br> own pages as you please. to also like and comment on others posts easliy.<br>
+I used black writing with red boxes for easy viewing.
 
 #
 
@@ -104,5 +120,136 @@ My design idea was to keep it simple and easy on the eye<br>every part is readib
 ![Alt text](assets/tests/css-validator.png)
 
 #
+## Javascript (jshint)
+![Alt text](assets/tests/jshint.png)
+
+#
 ## CI Python Linter:
-* This covers all my py files in my gamewise blog file<br> and my games file.
+* This covers all my py files in my gamewise blog folder.
+![Alt text](assets/tests/asgi-py.png)
+![Alt text](assets/tests/gamewise-url.png)
+![Alt text](assets/tests/wsgi-py.png)
+![Alt text](assets/tests/setting-py.png)
+
+* This covers all my py files in my games folder.
+![Alt text](assets/tests/admin-py.png)
+![Alt text](assets/tests/apps-py.png)
+![Alt text](assets/tests/forms-py.png)
+![Alt text](assets/tests/models-py.png)
+![Alt text](assets/tests/tests-py.png)
+![Alt text](assets/tests/games-url.png)
+![Alt text](assets/tests/views-py.png)
+- All came back clear of any faults
+
+#
+## I am responsive:
+![Alt text](assets/tests/i%20am%20responsive.png)
+
+#
+# Wireframes:
+- i used https://balsamiq.com/wireframes/ to design my wireframes.
+![Alt text](assets/wireframes/admin%20wireframe.png)<br>
+![Alt text](assets/wireframes/edit%20and%20delete.png)<br>
+![Alt text](assets/wireframes/homepage.png)<br>
+![Alt text](assets/wireframes/mobile%20wireframe.png)<br>
+![Alt text](assets/wireframes/wireframe%20homepage.png)
+
+#
+
+# User stories:
+- This is my user story screenshot
+![Alt text](assets/screenshots/full%20view%20done.png)<br<br>>
+
+- This is my open issues screenshot
+![Alt text](assets/screenshots/open%20stories.png)<br><br>
+
+- This is my closed issues screenshot
+![Alt text](assets/screenshots/closedstories.png)
+
+#
+
+# Future features:
+* In the future i would like to add social sign in <br> and a forgot my password rest link.
+![Alt text](assets/screenshots/Future%20features.png)
+
+* Here is a link to my issues page on github https://github.com/gareth-39/Gamewise-Blog/issues
+
+#
+
+# Bugs and errors:
+I had so many bugs and errors on this project here is a list of all of them and there fixes.
+
+- Error 404 page not found = (Solution) It was I had not linked my paths properly in my settings.py
+
+- CSS not working on Heroku = (Solution) I had not changed debug to false before deployment
+
+- Server 500 = (Solution) there was a problem in my json file with the superuser deleted that user and replaced it with a new one/
+
+- html pages not found = (Solution) This was a big one as it made my whole code error i changed a file name from blog to games, i didnt realise every where on the code i needed to change blog to games in each py file.
+
+- Images not loading = (Solution) Realised it was the I was using it didnt seem to be compatible with gitpod so all the images errored changed the site and they worked perfectly.
+
+
+#
+
+#  Deployment
+* This project was deployment using Code institute's mock terminal on Heroku.
+
+* * Sign up for heroku.
+* * Create a Heroku app.
+* * Add a confrig var (key) PORT (value) 8000.
+* * CLOUDINARY_URL
+* * DATABASE_URL
+* * HEROKU_POSTGRESQL_GREEN_URL
+* * SECRET_KEY
+* * Link the Heroku app to my repository.
+* * Build the repository.
+* * Click on deploy.
+* * New page opens with working app.
+
+#
+
+# Credits:
+
+* Bootstrap https://getbootstrap.com/
+
+* Code Institute https://codeinstitute.net/ie/
+
+* Pexel.com https://www.pexels.com/ for all my images
+
+* Slack https://app.slack.com/
+
+* Google http://google.com/
+
+* Student care https://learn.codeinstitute.net/ci_support/diplomainsoftwaredevelopmentecomm/studentcare
+without them i would have given up.
+
+#
+
+# Icons:
+
+* Font awesome https://fontawesome.com/
+
+#
+
+# Fonts:
+
+* Google fonts https://fonts.google.com/
+
+#
+
+# Programs used:
+
+* HTML 59.1%
+* Python 38.0%
+* Css 2.9%
+
+#
+
+# My thanks:
+
+* Thanks to my mentor Jubril Akolade for his endless patience with me and answering my plethora of questions.
+
+* Thanks to Google (https://www.google.com/) for helping me debug and troubleshoot any issue I had.
+
+* Finally, thanks to my Slack group (https://app.slack.com/) who are so helpful and assisting me every step of the way.
