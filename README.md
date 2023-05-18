@@ -216,6 +216,8 @@ I had so many bugs and errors on this project, here is a list of them and the so
 
 # Credits:
 
+* https://mdbootstrap.com/ for my social media footer for each page 
+
 * Bootstrap https://getbootstrap.com/
 
 * Code Institute https://codeinstitute.net/ie/
